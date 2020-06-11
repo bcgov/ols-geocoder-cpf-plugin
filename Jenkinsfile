@@ -7,7 +7,8 @@ node ('master'){
         deleteDir()
 	    
         checkout([$class: 'GitSCM', 
-		  branches: [[name: '*/dev']], // branches: [[name: '${gitTag}']], 
+		  // branches: [[name: '*/dev']], 
+                  branches: [[name: '${gitTag}']], 
 		  doGenerateSubmoduleConfigurations: false, 
 		  extensions: [[$class: 'WipeWorkspace']], 
 		  gitTool: 'Default', 
